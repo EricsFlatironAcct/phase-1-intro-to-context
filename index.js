@@ -36,9 +36,7 @@ function createTimeOutEvent(employee, timeOutString) {
 }
 //calculates hours worked by an employee on a certain date
 function hoursWorkedOnDate(employee, date) {
-    timeOutOnDate = employee.timeOutEvents.find(time => time.date === date)
-    timeInOnDate = employee.timeInEvents.find(time => time.date === date)
-    return (parseInt(timeOutOnDate.hour) - parseInt(timeInOnDate.hour)) / 100
+    return (parseInt(employee.timeOutEvents.find(time => time.date === date).hour) - parseInt(employee.timeInEvents.find(time => time.date === date).hour)) / 100
 }
 //calculates pay for a employee on a certain date
 function wagesEarnedOnDate(employee, date) {
